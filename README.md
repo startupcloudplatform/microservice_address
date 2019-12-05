@@ -62,9 +62,9 @@
 | :---------------------:| :------------------------:|
 | address-service-addr   | ADDRESS_API_KEY: 키입력     |
 
-
-​      
+      
 4. **CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치**
+
 5. **[CF  CLI](#https://github.com/cloudfoundry/cli/releases) 설치** 
        
 
@@ -131,6 +131,5 @@
 ## MsXpert Studio 접속
 
 Paas-TA 계정을 가지고 MsXpert Studio에 접속하여  아래 이미지와 같이 user1-paasta 조직에 배포한 frontend, backend 앱을 마우스로 드래그하여 마이크로서비스를 설계할 수 있습니다.
-<img src= "./images/img03.png" width="500"/>
 
-​    
+<img src= "./images/img03.png" width="500"/>    
