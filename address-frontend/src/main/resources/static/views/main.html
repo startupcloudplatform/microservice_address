@@ -1,0 +1,114 @@
+
+<div class="wrapper">
+    <div class="content-wrap">
+        <div class="box-wrap content">
+            <h4 class="">주소 찾기</h4>
+            <div class="mt-20">
+                <div class="search-box w-100p">
+                    <input type="search" class="w-100p addr-search" ng-model="mc.keyword" ng-keypress="mc.enterPress($event, mc.pageOptions.currentPage)" placeholder="도로명주소, 건물명 또는 지번을 입력하세요" />
+                    <button type="button" class="btn btn-ico btn-round-input fa-close" ng-click="mc.reset();"><span title="삭제">삭제</span></button>
+                    <button type="button" class="btn btn-ico" ng-click="mc.searchKeyword(mc.pageOptions.currentPage);"><i class="fa-search" title="검색"></i></button>
+                    <div class="addr-result">
+                        <div class="addr-tip" ng-show="mc.init">
+                            <h4 class=""><strong>검색어 예)</strong></h4>
+                            <p>아래와 같은 조합으로 검색을 하시면 더욱 정확한 결과가 검색됩니다.</p>
+                            <ul class="example">
+                                <li class="tit">도로명 + 건물번호</li>
+                                <li class="ex">반포대로 58</li>
+                            </ul>
+                            <ul class="example">
+                                <li class="tit">건물명</li>
+                                <li class="ex">독립기념관</li>
+                            </ul>
+                            <ul class="example">
+                                <li class="tit">지역명(동/리) + 지번</li>
+                                <li class="ex">삼성동 25</li>
+                            </ul>
+                        </div>
+                        <div class="addr-content"  ng-show="!mc.init">
+                            <div ng-hide="mc.close">
+                                <script type="text/ng-template" id="alert.html">
+                                    <div ng-transclude></div>
+                                </script>
+                                <div uib-alert ng-class="'alert-danger'" close="closeAlert()">{{mc.alert.msg}}</div>
+
+                            </div>
+
+                            <div class="guide-line">
+                                <p class="color-blue">검색어 예: 도로명(반포대로 58), 건물명(독립기념관), 지번(삼성동 25)</p>
+                                <span>ㆍ도로명 주소 검색 결과</span><span class="color-lightblue mb-5">({{ mc.list.common.totalCount }}건)</span>
+                                <!-- 선택된 값 -->
+                                <div class="mt-20 mb-20 addr-input">
+                                    <p><span class="memo-span">목록에 출력된 주소 중 한 개를 선택하세요. {{ mc.message }}</span></p>
+                                    <ul>
+                                        <li><h5>우편번호</h5></li>
+                                        <li><input type="text" class="w-30" ng-model="mc.addr1" readonly placeholder="우편번호" /></li>
+                                    </ul>
+                                    <div class="layout-col2 mt-5">
+                                        <ul class="col-left" style="width: 48%;">
+                                            <li><h5>상세주소</h5></li>
+                                            <li><input type="text" class="w-100" ng-model="mc.addr2" readonly placeholder="상세주소" /></li>
+                                        </ul>
+                                        <ul class="col-right " style="width: 48%;">
+                                            <li><h5>참고항목</h5></li>
+                                            <li><input type="text" class="w-100" ng-model="mc.addr3" readonly placeholder="참고항목" /></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <table class="table table-blue">
+                                    <colgroup>
+                                        <col width="10%"><col><col width="15%"><col width="15%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">주소</th>
+                                            <th scope="col">우편번호</th>
+                                            <th scope="col">선택</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-if="mc.list.juso.length == 0 || mc.list.juso ==null">
+                                            <td colspan="6" class="text-center">
+                                                목록이 존재하지 않습니다.
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat="juso in mc.list.juso">
+                                            <td class="text-center">
+                                                <span ng-if="mc.pageOptions.currentPage == 1">{{ $index + 1 }}</span>
+                                                <span  ng-if="mc.pageOptions.currentPage > 1">{{(mc.pageOptions.currentPage * mc.pageOptions.pageSize ) + $index + 1 }}</span>
+                                            </td>
+                                            <td class="text-left">
+                                                <div><span class="btn btn-xs tag-line">도로명</span>&nbsp;{{juso.roadAddr}}</div>
+                                                <div><span class="btn btn-xs tag-line">지&nbsp;&nbsp;&nbsp;&nbsp;번</span>&nbsp;{{juso.jibunAddr}}</div>
+                                            </td>
+                                            <td class="text-center">{{juso.zipNo}}</td>
+                                            <td class="text-center selected"><a ng-click="mc.selected(juso);">선택하기</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="paginationWrap">
+                                    <paging
+                                        page="mc.pageOptions.currentPage"
+                                        page-size="mc.pageOptions.pageSize"
+                                        total="mc.pageOptions.total"
+                                        pg-href=""
+                                        show-prev-next="true"
+                                        show-first-last="true"
+                                        paging-action="mc.searchKeyword(page)"
+                                        text-first-class="firstPage"
+                                        text-last-class="lastPage"
+                                        text-next-class="nextPage"
+                                        text-prev-class="prevPage">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
