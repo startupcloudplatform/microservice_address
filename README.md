@@ -53,11 +53,11 @@
 
 ### Preparations
 
- 1. ##### [도로명 주소에서 제공하는 API 홈페이지](#https://www.juso.go.kr/addrlink/devAddrLinkRequestWrite.do?returnFn=write&cntcMenu=URL) 에서 오픈 API를 신청합니다.
+1. ##### [도로명 주소에서 제공하는 API 홈페이지](#https://www.juso.go.kr/addrlink/devAddrLinkRequestWrite.do?returnFn=write&cntcMenu=URL) 에서 오픈 API를 신청합니다.
 
    ![](/home/cro130/startupPlatform/startupcloudplatform_github/microservice_address/images/jusoApi.png)
 
- 2. ##### 주소 Open API 인증키 정보 입력
+2. ##### 주소 Open API 인증키 정보 입력
 
    주소 Open API에서 받은 인증키를 환경정보에 설정합니다. 설정하는 방법은 **두가지**가 있습니다. 
 
