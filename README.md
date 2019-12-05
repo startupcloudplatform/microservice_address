@@ -53,11 +53,11 @@
 
 ### Preparations
 
-1. ##### [도로명 주소에서 제공하는 API 홈페이지](#https://www.juso.go.kr/addrlink/devAddrLinkRequestWrite.do?returnFn=write&cntcMenu=URL) 에서 오픈 API를 신청합니다.
+ 1. ##### [도로명 주소에서 제공하는 API 홈페이지](#https://www.juso.go.kr/addrlink/devAddrLinkRequestWrite.do?returnFn=write&cntcMenu=URL) 에서 오픈 API를 신청합니다.
 
    ![](/home/cro130/startupPlatform/startupcloudplatform_github/microservice_address/images/jusoApi.png)
 
-2. ##### 주소 Open API 인증키 정보 입력
+ 2. ##### 주소 Open API 인증키 정보 입력
 
    주소 Open API에서 받은 인증키를 환경정보에 설정합니다. 설정하는 방법은 **두가지**가 있습니다. 
 
@@ -93,9 +93,9 @@
 
    
 
-3. ##### CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치
+ 3. ##### CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치
 
-4. ##### [CF  CLI](#https://github.com/cloudfoundry/cli/releases) 설치
+ 4. ##### [CF  CLI](#https://github.com/cloudfoundry/cli/releases) 설치
 
 
 
@@ -107,9 +107,9 @@
 
 (단, mysql 서비스가 설치되어있어야 합니다. 관련 자료는 [PaaS-TA 서비스 가이드 참조 ](#https://guide.paas-ta.kr/guide-4.0-rotelle/service-guide/dbms/paas-ta-mysql) )
 
-1. #####  address-frontend, address-service 프로젝트를 각각 빌드합니다.
+ 1. #####  address-frontend, address-service 프로젝트를 각각 빌드합니다.
 
-2. #####  CF CLI를 통해 조직 및 영역을 생성합니다.
+ 2. #####  CF CLI를 통해 조직 및 영역을 생성합니다.
 
     [PaaS-TA 포털을 활용중일 경우 포털을 통해 조직 및 영역을 생성할 수 있습니다.]
 
@@ -124,7 +124,7 @@
 
    
 
-3. #####  MsXpert Studio에서 user1-msa 조직에 앱을 copy하여 배포하기위해 user1-paasta 조직에 위 샘플앱(frontend, backend) 을  CF CLI을 통해 push합니다.
+ 3. #####  MsXpert Studio에서 user1-msa 조직에 앱을 copy하여 배포하기위해 user1-paasta 조직에 위 샘플앱(frontend, backend) 을  CF CLI을 통해 push합니다.
 
    ```
          $ cf create-org user1-paasta
@@ -135,7 +135,7 @@
 
    
 
-4. #####  Manifest.yml 작성법
+ 4. #####  Manifest.yml 작성법
 
    ```
       applications:
@@ -151,7 +151,7 @@
 
    
 
-5. #####  MySQL Service Instance 생성
+ 5. #####  MySQL Service Instance 생성
 
    ```
    # 사용할 서비스 인스턴스 생성
