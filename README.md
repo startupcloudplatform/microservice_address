@@ -63,7 +63,7 @@
 
    아래 두가지 방법 중 한가지를 선택하세요.
 
-   ###### 2.1. aptTrade-service 프로젝트에서 수정
+   ###### - 2.1. aptTrade-service 프로젝트에서 수정
 
    ​       aptTrade-service/src/main/resources/application.properties 수정
 
@@ -77,7 +77,7 @@
       address.api.key: ##인증키 입력
    ```
 
-   ###### 2.2. Microservice Studio에서 Config 설정
+   ###### - 2.2. Microservice Studio에서 Config 설정
 
    ​       Microservice Studio 수정 화면에서 오른쪽 Tab에서 Config 정보를 입력합니다.
 
