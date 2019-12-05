@@ -39,11 +39,13 @@
 1. **[도로명 주소에서 제공하는 API 홈페이지](#https://www.juso.go.kr/addrlink/devAddrLinkRequestWrite.do?returnFn=write&cntcMenu=URL) 에서 오픈 API를 신청합니다.**
 <img src="./images/jusoApi.png"  width="500" />
 
-2. **주소 Open API 인증키 정보 입력** <br/>
-주소 Open API에서 받은 인증키를 환경정보에 설정합니다. 설정하는 방법은 **두가지**가 있습니다. 아래 두가지 방법 중 한가지를 선택하세요.</br>
+2. **주소 Open API 인증키 정보 입력** 
 
-  2.1. aptTrade-service 프로젝트에서 수정<br/>
-  aptTrade-service/src/main/resources/application.properties 수정
+  주소 Open API에서 받은 인증키를 환경정보에 설정합니다. 설정하는 방법은 **두가지**가 있습니다. 아래 두가지 방법 중 한가지를 선택하세요.
+
+​       2.1. aptTrade-service 프로젝트에서 수정
+
+​              aptTrade-service/src/main/resources/application.properties 수정
 
    ````
    $vi aptTrade-service/src/main/resources/application.properties
@@ -53,20 +55,26 @@
    address.api.key: ##인증키 입력
    ````
 
-  2.2. Microservice Studio에서 Config 설정
-   Microservice Studio 수정 화면에서 오른쪽 Tab에서 Config 정보를 입력합니다.
+ 
+
+​       2.2. Microservice Studio에서 Config 설정
+
+​              Microservice Studio 수정 화면에서 오른쪽 Tab에서 Config 정보를 입력합니다.
 
    ![](./images/img04.png)
 
-  |           App          |        Properties         |
-  | :---------------------:| :------------------------:|
-  | address-service-addr   | ADDRESS_API_KEY: 키입력     |
+|           App          |        Properties         |
+| :---------------------:| :------------------------:|
+| address-service-addr   | ADDRESS_API_KEY: 키입력     |
 
-      
+
   3. **CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치**
 
+     
+
   4. **[CF  CLI](#https://github.com/cloudfoundry/cli/releases) 설치** 
-       
+
+     
 
 ## MySQL Service && Application Deploy
 주소 마이크로서비스를 이용하기 위해서는 CF에 mysql Service 인스턴스를 생성 후 생성한 주소  backend 앱을 바인딩해야 합니다.  주소 backend 앱은 연결된 서비스를 인지하고  바인딩시 생성된 mysql 접속정보를 읽어오기 때문에 따로 backend App의 properties에 MySQL DB정보를 입력해야하는 번거로움을 해소해줍니다. (단, mysql 서비스가 설치되어있어야 합니다. 관련 자료는 [PaaS-TA 서비스 가이드 참조 ](#https://guide.paas-ta.kr/guide-4.0-rotelle/service-guide/dbms/paas-ta-mysql) ) 
