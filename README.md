@@ -53,19 +53,19 @@
    address.api.key: ##인증키 입력
    ````
 
-   2.2. Microservice Studio에서 Config 설정
+  2.2. Microservice Studio에서 Config 설정
    Microservice Studio 수정 화면에서 오른쪽 Tab에서 Config 정보를 입력합니다.
 
-![](./images/img04.png)
+   ![](./images/img04.png)
 
-|           App          |        Properties         |
-| :---------------------:| :------------------------:|
-| address-service-addr   | ADDRESS_API_KEY: 키입력     |
+  |           App          |        Properties         |
+  | :---------------------:| :------------------------:|
+  | address-service-addr   | ADDRESS_API_KEY: 키입력     |
 
       
-4. **CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치**
+  3. **CF 또는 [PaaS-TA](#http://paas-ta.kr) 설치**
 
-5. **[CF  CLI](#https://github.com/cloudfoundry/cli/releases) 설치** 
+  4. **[CF  CLI](#https://github.com/cloudfoundry/cli/releases) 설치** 
        
 
 ## MySQL Service && Application Deploy
