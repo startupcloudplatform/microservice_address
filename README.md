@@ -29,7 +29,7 @@
 
 ### Architecture
 
-해당 마이크로서비스는 Frontend, Gateway, Backend, Config Server, Registry 등 최소 5개의 앱으로 구성되어 있으며, 공동주택 가격정보 조회, 주소 조회 등의 마이크로서비스 Rest API를 요청하고 있습니다. 
+해당 마이크로서비스는 Frontend, Gateway, Backend, Config Server, Registry 등 최소 5개의 앱으로 구성되어 있습니다. 
 
 마이크로서비스 Studio를 사용한 앱 간의 관계는 다음과 같습니다.
 
