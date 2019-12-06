@@ -23,7 +23,7 @@
 
 해당 서비스를 이용하기위해서는 도로명 주소 API 홈페이지에서 [검색 API 신청하기](#https://www.juso.go.kr/addrlink/devAddrLinkRequestWrite.do?returnFn=write&cntcMenu=URL) 서비스를 이용해야 합니다.
 
-![](/home/cro130/startupPlatform/startupcloudplatform_github/microservice_address/images/img01.png)
+![](./images/img01.png)
 
 
 
@@ -33,7 +33,7 @@
 
 마이크로서비스 Studio를 사용한 앱 간의 관계는 다음과 같습니다.
 
-![](/home/cro130/startupPlatform/startupcloudplatform_github/microservice_address/images/architecture.png)
+![](./images/architecture.png)
 
 
 
@@ -41,7 +41,7 @@
 
 이 서비스는 MsXpert Studio를 이용하여 배포된 마이크로서비스의 Frontend 애플리케이션 API 문서를 조회할 수 있습니다.
 
-![](/home/cro130/startupPlatform/startupcloudplatform_github/microservice_address/images/img02.png)
+![](./images/img02.png)
 
 - /v1/address?sido=&gugun=&dong=
 - /v1/address/list?keyword=&page=&pageSize=
@@ -55,7 +55,7 @@
 
 ##### 1. [도로명 주소에서 제공하는 API 홈페이지](#https://www.juso.go.kr/addrlink/devAddrLinkRequestWrite.do?returnFn=write&cntcMenu=URL) 에서 오픈 API를 신청합니다.
 
-   ![](/home/cro130/startupPlatform/startupcloudplatform_github/microservice_address/images/jusoApi.png)
+   ![](./images/jusoApi.png)
 
 ##### 2. 주소 Open API 인증키 정보 입력
 
