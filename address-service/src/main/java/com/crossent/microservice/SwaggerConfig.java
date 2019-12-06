@@ -17,7 +17,7 @@ public class SwaggerConfig {
     @Bean
     public Docket api() throws IOException, XmlPullParserException {
         return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(RequestHandlerSelectors.any())
+                .select().apis(RequestHandlerSelectors.basePackage("com.crossent.microservice"))
                 .paths(PathSelectors.ant("/**"))
                 .build();
     }

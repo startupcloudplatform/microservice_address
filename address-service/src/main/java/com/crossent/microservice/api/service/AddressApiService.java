@@ -20,21 +20,16 @@ import java.util.List;
 
 @Service
 @RefreshScope
-public class AddressApiService {
+public class AddressApiService extends RequestService {
 
     private static final Logger logger = LoggerFactory.getLogger(AddressApiService.class);
 
-    @Value("${address.api.key:}")
-    private String confmKey;
-
-    @Value("${address.api.uri:}")
-    public String uri;
-
-
-    @Autowired
-    private RequestService requestService;
-
-
+    /**
+     * 키워드를 통한 주소 조회 페이징
+     * @param currentPage  현재페이지
+     * @param countPerPage 페이지당 게시물 수
+     * @param keyword      키워드
+     */
     public AddressResultResponse listAddressByKeyword(int currentPage, int countPerPage, String keyword){
         return requestAddressByKeyword(currentPage,countPerPage,  keyword);
     }
@@ -59,8 +54,6 @@ public class AddressApiService {
                 }
             }
         }
-
-
         return result;
     }
 
@@ -85,8 +78,6 @@ public class AddressApiService {
                 }
 
                 float totalPage = (Float.parseFloat(list.getCommon().getTotalCount()) / countPerPage ) - currentPage;
-//            logger.debug("page :: " + currentPage);
-
                 if( totalPage >= 0 ){
                     currentPage ++;
                     listAddressByKeywordAndAdmCode(currentPage , countPerPage, keyword, admCode);
@@ -98,36 +89,6 @@ public class AddressApiService {
     }
 
 
-    private AddressResultResponse requestAddressByKeyword(int currentPage, int countPerPage, String keyword){
-        AddressResultResponse response = null;
-        AddressResponse<AddressResultResponse> contents;
-        try{
-            HttpUrl.Builder urlBuilder = HttpUrl.parse(uri).newBuilder()
-                    .addQueryParameter("confmKey", confmKey)
-                    .addQueryParameter("currentPage", String.valueOf(currentPage))
-                    .addQueryParameter("countPerPage", String.valueOf(countPerPage))
-                    .addQueryParameter("resultType", "json")
-                    .addQueryParameter("keyword", keyword);
 
-            String url = urlBuilder.build().toString();
-            String result  = requestService.getHttp(url);
-
-            if(result != null ){
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-                StringReader reader = new StringReader(result);
-                contents  = mapper.readValue(reader, new TypeReference<AddressResponse<AddressResultResponse>>() {});
-                response = contents.getResults();
-
-            }else{
-                response = new AddressResultResponse();
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return response;
-    }
 
 }
