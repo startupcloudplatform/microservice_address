@@ -38,11 +38,11 @@ public class AddressController {
         return addressService.listAllSido();
     }
 
-    @ApiOperation(value = "행정구역 구/ 조회 ")
+    @ApiOperation(value = "행정구역 구/ 조회 : ALL")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "sido", value = "시/도", required = true, dataType = "string", paramType = "query")
     })
-    @RequestMapping(value = "/gugun/list : ALL", method = RequestMethod.GET)
+    @RequestMapping(value = "/gugun/list", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<String> listAllGuGun(@RequestParam(value = "sido") String sido) {
         return addressService.listAllGuGunBySido(sido);
